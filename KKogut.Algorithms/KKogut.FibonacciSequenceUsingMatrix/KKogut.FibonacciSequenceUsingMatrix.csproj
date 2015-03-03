@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{74857CBF-7C3C-42EA-B31A-B37B835057D4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4618662F-0E78-41A1-B0EC-9C0ABB683FE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KKogut.Algorithms</RootNamespace>
-    <AssemblyName>KKogut.Algorithms</AssemblyName>
+    <RootNamespace>FibonacciSequenceUsingMatrix</RootNamespace>
+    <AssemblyName>FibonacciSequenceUsingMatrix</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,25 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="FibonacciSequence.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj">
-      <Project>{4618662f-0e78-41a1-b0ec-9c0abb683fe7}</Project>
-      <Name>KKogut.FibonacciSequenceUsingMatrix</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\KKogut.RussianMultiplication\KKogut.RussianMultiplication.csproj">
-      <Project>{369f9b3c-5f3e-4648-b855-0178c9b51b77}</Project>
-      <Name>KKogut.RussianMultiplication</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\KKogut.SortAlgorithms\KKogut.SortAlgorithms.csproj">
-      <Project>{863940b3-8c4f-49dd-9aac-9b990c410b1f}</Project>
-      <Name>KKogut.SortAlgorithms</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.SortAlgorithms;
 
 namespace KKogut.Algorithms
@@ -25,6 +26,9 @@ namespace KKogut.Algorithms
                         break;
                     case "3":
                         RunMergeSort();
+                        break;
+                    case "4":
+                        RunFibonacciSequence();
                         break;
                     default:
                         return;
@@ -74,6 +78,13 @@ namespace KKogut.Algorithms
                 Console.Write("{0} ", number);
             }
             Console.WriteLine();
+        }
+
+        private static void RunFibonacciSequence()
+        {
+            Console.WriteLine("Enter natural number:");
+            var @in = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(FibonacciSequence.GetFibonacciNumber(@in));
         }
     }
 }

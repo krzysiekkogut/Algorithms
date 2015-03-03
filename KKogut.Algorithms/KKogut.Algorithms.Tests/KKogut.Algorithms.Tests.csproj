@@ -53,8 +53,13 @@
     <Compile Include="RussianMultiplicationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortTests.cs" />
+    <Compile Include="FibonacciSequenceTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj">
+      <Project>{4618662f-0e78-41a1-b0ec-9c0abb683fe7}</Project>
+      <Name>KKogut.FibonacciSequenceUsingMatrix</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KKogut.RussianMultiplication\KKogut.RussianMultiplication.csproj">
       <Project>{369f9b3c-5f3e-4648-b855-0178c9b51b77}</Project>
       <Name>KKogut.RussianMultiplication</Name>
