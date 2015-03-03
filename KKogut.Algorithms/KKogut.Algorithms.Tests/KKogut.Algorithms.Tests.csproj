@@ -52,11 +52,16 @@
   <ItemGroup>
     <Compile Include="RussianMultiplicationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KKogut.RussianMultiplication\KKogut.RussianMultiplication.csproj">
       <Project>{369f9b3c-5f3e-4648-b855-0178c9b51b77}</Project>
       <Name>KKogut.RussianMultiplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KKogut.SortAlgorithms\KKogut.SortAlgorithms.csproj">
+      <Project>{863940b3-8c4f-49dd-9aac-9b990c410b1f}</Project>
+      <Name>KKogut.SortAlgorithms</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

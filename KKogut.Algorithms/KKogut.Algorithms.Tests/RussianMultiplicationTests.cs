@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KKogut.Algorithms.Tests
 {
@@ -18,7 +17,7 @@ namespace KKogut.Algorithms.Tests
         }
 
         [TestMethod]
-        public void Multiplicate_12341234_and_897123_Returns_()
+        public void Multiplicate_12341234_and_897123()
         {
             long a = 12341234;
             long b = 897123;
