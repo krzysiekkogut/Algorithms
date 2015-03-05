@@ -8,6 +8,17 @@ namespace KKogut.Algorithms.Tests
     public class SortTests
     {
         [TestMethod]
+        public void BubbleSort_Test()
+        {
+            var @in = new[] { 1, 5, 12, 3, 2, 7, 6, 9, 0 };
+            var expected = new[] { 0, 1, 2, 3, 5, 6, 7, 9, 12 };
+
+            var result = @in.BubbleSort<int>();
+
+            CollectionAssert.AreEquivalent(expected, result.ToList());
+        }
+
+        [TestMethod]
         public void InsertionSort_Test()
         {
             var @in = new[] { 1, 5, 12, 3, 2, 7, 6, 9, 0 };

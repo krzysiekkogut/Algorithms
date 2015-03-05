@@ -19,18 +19,21 @@ namespace KKogut.Algorithms
                         RunRussianMultiplication();
                         break;
                     case "1":
-                        RunInsertionSort();
+                        RunBubbleSort();
                         break;
                     case "2":
-                        RunSelectionSort();
+                        RunInsertionSort();
                         break;
                     case "3":
-                        RunMergeSort();
+                        RunSelectionSort();
                         break;
                     case "4":
-                        RunFibonacciSequence();
+                        RunMergeSort();
                         break;
                     case "5":
+                        RunFibonacciSequence();
+                        break;
+                    case "6":
                         RunDijkstrasAlgorithm();
                         break;
                     default:
@@ -45,6 +48,18 @@ namespace KKogut.Algorithms
             Console.WriteLine("Enter two natural numbers (delimitted with space):");
             var @in = Console.ReadLine().Split(' ');
             Console.WriteLine(RussianMultiplication.RussianMultiplication.Multiplicate(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
+        }
+
+        private static void RunBubbleSort()
+        {
+            Console.WriteLine("Enter natural numbers to sort (delimitted with space):");
+            var @in = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x));
+            var @out = @in.BubbleSort<int>();
+            foreach (var number in @out)
+            {
+                Console.Write("{0} ", number);
+            }
+            Console.WriteLine();
         }
 
         private static void RunInsertionSort()

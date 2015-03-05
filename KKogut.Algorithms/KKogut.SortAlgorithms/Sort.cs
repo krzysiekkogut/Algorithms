@@ -6,6 +6,26 @@ namespace KKogut.SortAlgorithms
 {
     public static class Sort
     {
+        public static IEnumerable<T> BubbleSort<T>(this IEnumerable<T> array) where T : IComparable
+        {
+            var arr = array.ToArray<T>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if(arr[j].CompareTo(arr[j]) < 0)
+                    {
+                        var tmp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = tmp;
+                    }
+                }
+            }
+
+            return arr;
+        }
+
         public static IEnumerable<T> InsertionSort<T>(this IEnumerable<T> array) where T : IComparable
         {
             var arr = array.ToArray<T>();
