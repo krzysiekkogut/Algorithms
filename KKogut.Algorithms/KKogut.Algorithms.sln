@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKogut.SortAlgorithms", "KK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKogut.FibonacciSequenceUsingMatrix", "KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj", "{4618662F-0E78-41A1-B0EC-9C0ABB683FE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKogut.DijkstrasAlgorithm", "KKogut.DijkstrasAlgorithm\KKogut.DijkstrasAlgorithm.csproj", "{DA0D793D-34B6-484F-9E69-4452076AA0B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4618662F-0E78-41A1-B0EC-9C0ABB683FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4618662F-0E78-41A1-B0EC-9C0ABB683FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4618662F-0E78-41A1-B0EC-9C0ABB683FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0D793D-34B6-484F-9E69-4452076AA0B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0D793D-34B6-484F-9E69-4452076AA0B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0D793D-34B6-484F-9E69-4452076AA0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0D793D-34B6-484F-9E69-4452076AA0B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
