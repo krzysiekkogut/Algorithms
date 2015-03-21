@@ -10,9 +10,9 @@ namespace KKogut.DijkstrasAlgorithm
         private int[] distances;
         private SortedList<int, int> q;
 
-        public DijkstrasAlgorithm(int numberOfVerticles)
+        public DijkstrasAlgorithm(int numberOfVertices)
         {
-            n = numberOfVerticles;
+            n = numberOfVertices;
             edges = new int[n, n];
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
@@ -31,7 +31,7 @@ namespace KKogut.DijkstrasAlgorithm
             edges[u, v] = edges[v, u] = w;
         }
 
-        public int[] FindShortestDistancesFromVerticle(int v)
+        public int[] FindShortestDistancesFromVertex(int v)
         {
             distances[v] = q[v] = 0;
 

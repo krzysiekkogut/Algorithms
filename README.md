@@ -7,4 +7,5 @@ Implementation of chosen problems from Algorithms And Data Structures course on 
 3: Selection sort  
 4: Merge sort  
 5: Fibonacci Sequence (quick matrix multiplication)  
-6: Dijkstra's algorithm to find shortest paths
+6: Dijkstra's algorithm to find shortest paths from source vertex
+7: Floyd-Warshall algorithm to find shortest paths between each pair of vertices

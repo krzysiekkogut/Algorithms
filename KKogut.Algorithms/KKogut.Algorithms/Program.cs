@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using KKogut.FibonacciSequenceUsingMatrix;
+using KKogut.FloydWarshallAlorithm;
 using KKogut.SortAlgorithms;
 
 namespace KKogut.Algorithms
@@ -35,6 +36,9 @@ namespace KKogut.Algorithms
                         break;
                     case "6":
                         RunDijkstrasAlgorithm();
+                        break;
+                    case "7":
+                        RunFloydWarshallAlgorithm();
                         break;
                     default:
                         return;
@@ -107,7 +111,7 @@ namespace KKogut.Algorithms
 
         private static void RunDijkstrasAlgorithm()
         {
-            Console.WriteLine("Enter the number of verticles:");
+            Console.WriteLine("Enter the number of vertices:");
             var n = Convert.ToInt32(Console.ReadLine());
             var dijkstra = new DijkstrasAlgorithm.DijkstrasAlgorithm(n);
             Console.WriteLine("Enter edges and their weights (in format: u v w).");
@@ -119,14 +123,37 @@ namespace KKogut.Algorithms
                 var split = @in.Split(' ');
                 dijkstra.AddEdge(Convert.ToInt32(split[0]), Convert.ToInt32(split[1]), Convert.ToInt32(split[2]));
             }
-            Console.WriteLine("Type in a number of source verticle:");
+            Console.WriteLine("Type in a number of source vertex:");
             var v = Convert.ToInt32(Console.ReadLine());
-            var distances = dijkstra.FindShortestDistancesFromVerticle(v);
-            Console.WriteLine("Shortest paths to i-th from v verticle is of distance:");
-            Console.WriteLine("i\tdistance");
+            var distances = dijkstra.FindShortestDistancesFromVertex(v);
+            Console.WriteLine("Shortest paths to u from v is of distance:");
+            Console.WriteLine("u\tdistance");
             for (int i = 0; i < distances.Length; i++)
                 Console.WriteLine("{0}\t{1}", i, distances[i]);
             Console.WriteLine();
         }
+
+        private static void RunFloydWarshallAlgorithm()
+        {
+            Console.WriteLine("Enter the number of vertices:");
+            var n = Convert.ToInt32(Console.ReadLine());
+            var fw = new FloydWarshallAlgorithm(n);
+            Console.WriteLine("Enter edges and their weights (in format: u v w).");
+            Console.WriteLine("To finish type \"enough\"");
+            while (true)
+            {
+                var @in = Console.ReadLine();
+                if (@in.ToLower().Equals("enough")) break;
+                var split = @in.Split(' ');
+                fw.AddEdge(Convert.ToInt32(split[0]), Convert.ToInt32(split[1]), Convert.ToInt32(split[2]));
+            }
+            var distances = fw.FindShortestPaths();
+            Console.WriteLine("Shortest paths (i -> j: distance):");
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    Console.WriteLine("{0} -> {1}: {2}", i, j, distances[i, j]);
+            Console.WriteLine();
+        }
+
     }
 }

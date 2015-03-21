@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FloydWarshallAlgorithmTests.cs" />
     <Compile Include="RussianMultiplicationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortTests.cs" />
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj">
       <Project>{4618662f-0e78-41a1-b0ec-9c0abb683fe7}</Project>
       <Name>KKogut.FibonacciSequenceUsingMatrix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KKogut.FloydWarshallAlorithm\KKogut.FloydWarshallAlorithm.csproj">
+      <Project>{a7f2534a-2372-477d-ac59-e681f5550c3f}</Project>
+      <Name>KKogut.FloydWarshallAlorithm</Name>
     </ProjectReference>
     <ProjectReference Include="..\KKogut.RussianMultiplication\KKogut.RussianMultiplication.csproj">
       <Project>{369f9b3c-5f3e-4648-b855-0178c9b51b77}</Project>

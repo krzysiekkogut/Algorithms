@@ -20,7 +20,7 @@ namespace KKogut.Algorithms.Tests
             dijkstra.AddEdge(3, 4, 6);
             dijkstra.AddEdge(4, 5, 9);
 
-            var distances = dijkstra.FindShortestDistancesFromVerticle(0);
+            var distances = dijkstra.FindShortestDistancesFromVertex(0);
 
             var expected = new[] { 0, 7, 9, 20, 20, 11 };
             CollectionAssert.AreEquivalent(expected, distances);
