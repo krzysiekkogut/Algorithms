@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using KKogut.MultiplicationAlgorithms;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KKogut.Algorithms.Tests
 {
@@ -11,7 +12,7 @@ namespace KKogut.Algorithms.Tests
             long a = 0;
             long b = 253;
 
-            var result = RussianMultiplication.RussianMultiplication.Multiplicate(a, b);
+            var result = RussianMultiplication.Multiplicate(a, b);
 
             Assert.AreEqual(0, result);
         }
@@ -22,7 +23,7 @@ namespace KKogut.Algorithms.Tests
             long a = 12341234;
             long b = 897123;
 
-            var result = RussianMultiplication.RussianMultiplication.Multiplicate(a, b);
+            var result = RussianMultiplication.Multiplicate(a, b);
 
             Assert.AreEqual(a * b, result);
         }

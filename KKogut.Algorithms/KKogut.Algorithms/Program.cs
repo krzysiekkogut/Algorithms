@@ -3,6 +3,7 @@ using System.Linq;
 using KKogut.ChangeProblem;
 using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.FloydWarshallAlorithm;
+using KKogut.MultiplicationAlgorithms;
 using KKogut.PriorityQueue;
 using KKogut.SortAlgorithms;
 
@@ -59,7 +60,7 @@ namespace KKogut.Algorithms
         {
             Console.WriteLine("Enter two natural numbers (delimitted with space):");
             var @in = Console.ReadLine().Split(' ');
-            Console.WriteLine(RussianMultiplication.RussianMultiplication.Multiplicate(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
+            Console.WriteLine(RussianMultiplication.Multiplicate(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
         }
 
         private static void RunBubbleSort()
