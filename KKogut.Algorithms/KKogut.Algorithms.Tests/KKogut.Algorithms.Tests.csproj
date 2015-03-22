@@ -56,6 +56,7 @@
     <Compile Include="SortTests.cs" />
     <Compile Include="FibonacciSequenceTests.cs" />
     <Compile Include="DijkstrasAlgorithmTest.cs" />
+    <Compile Include="PriorityQueueTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KKogut.DijkstrasAlgorithm\KKogut.DijkstrasAlgorithm.csproj">
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\KKogut.FloydWarshallAlorithm\KKogut.FloydWarshallAlorithm.csproj">
       <Project>{a7f2534a-2372-477d-ac59-e681f5550c3f}</Project>
       <Name>KKogut.FloydWarshallAlorithm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KKogut.PriorityQueue\KKogut.PriorityQueue.csproj">
+      <Project>{761a0be0-1969-458c-82a6-354625fa7554}</Project>
+      <Name>KKogut.PriorityQueue</Name>
     </ProjectReference>
     <ProjectReference Include="..\KKogut.RussianMultiplication\KKogut.RussianMultiplication.csproj">
       <Project>{369f9b3c-5f3e-4648-b855-0178c9b51b77}</Project>

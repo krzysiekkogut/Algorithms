@@ -2,6 +2,7 @@
 using System.Linq;
 using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.FloydWarshallAlorithm;
+using KKogut.PriorityQueue;
 using KKogut.SortAlgorithms;
 
 namespace KKogut.Algorithms
@@ -39,6 +40,9 @@ namespace KKogut.Algorithms
                         break;
                     case "7":
                         RunFloydWarshallAlgorithm();
+                        break;
+                    case "8":
+                        RunPriorityQueue();
                         break;
                     default:
                         return;
@@ -155,5 +159,40 @@ namespace KKogut.Algorithms
             Console.WriteLine();
         }
 
+        private static void RunPriorityQueue()
+        {
+            Console.WriteLine("Enter size of queue:");
+            var size = Convert.ToInt32(Console.ReadLine());
+            var queue = new PriorityQueue<int>(size);
+            Console.WriteLine("Enter next operations: \"e 5\" will enqueue 5, \"d\" will dequeue next value, \"min\" would show you next value (without removal).");
+            Console.WriteLine("To finish hit enter.");
+            while (true)
+            {
+                try
+                {
+                    var @in = Console.ReadLine();
+                    var split = @in.Split(' ');
+                    switch (split[0])
+                    {
+                        case "e":
+                            queue.Enqueue(Convert.ToInt32(split[1]));
+                            break;
+                        case "d":
+                            Console.WriteLine(queue.Dequeue());
+                            break;
+                        case "min":
+                            Console.WriteLine(queue.Min);
+                            break;
+                        default:
+                            return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    continue;
+                }
+            }
+        }
     }
 }
