@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runners.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -52,17 +53,13 @@
       <Project>{a5a38c86-af98-40f9-ae71-2250783b3368}</Project>
       <Name>KKogut.ChangeProblem</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KKogut.DijkstrasAlgorithm\KKogut.DijkstrasAlgorithm.csproj">
-      <Project>{da0d793d-34b6-484f-9e69-4452076aa0b2}</Project>
-      <Name>KKogut.DijkstrasAlgorithm</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj">
       <Project>{4618662f-0e78-41a1-b0ec-9c0abb683fe7}</Project>
       <Name>KKogut.FibonacciSequenceUsingMatrix</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KKogut.FloydWarshallAlorithm\KKogut.FloydWarshallAlorithm.csproj">
-      <Project>{a7f2534a-2372-477d-ac59-e681f5550c3f}</Project>
-      <Name>KKogut.FloydWarshallAlorithm</Name>
+    <ProjectReference Include="..\KKogut.GraphAlgorithms\KKogut.GraphAlgorithms.csproj">
+      <Project>{675a6e18-88b6-4f83-81c6-043e4783cb0d}</Project>
+      <Name>KKogut.GraphAlgorithms</Name>
     </ProjectReference>
     <ProjectReference Include="..\KKogut.MultiplicationAlgorithms\KKogut.MultiplicationAlgorithms.csproj">
       <Project>{530087c5-bb1b-4433-bd12-067355c7a51d}</Project>

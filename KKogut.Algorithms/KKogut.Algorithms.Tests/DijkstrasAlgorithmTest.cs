@@ -1,4 +1,5 @@
 ﻿using System;
+using KKogut.GraphAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KKogut.Algorithms.Tests
@@ -9,7 +10,7 @@ namespace KKogut.Algorithms.Tests
         [TestMethod]
         public void ShortestPathForExampleGraph()
         {
-            var dijkstra = new DijkstrasAlgorithm.DijkstrasAlgorithm(6);
+            var dijkstra = new DijkstrasAlgorithm(6);
             dijkstra.AddEdge(0, 1, 7);
             dijkstra.AddEdge(0, 2, 9);
             dijkstra.AddEdge(0, 5, 14);

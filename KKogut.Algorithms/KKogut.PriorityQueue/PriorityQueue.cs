@@ -6,7 +6,7 @@ namespace KKogut.PriorityQueue
     {
         private Heap<T> heap;
 
-        public object Count { get { return heap.Count; } }
+        public int Count { get { return heap.Count; } }
 
         public PriorityQueue(int size)
         {

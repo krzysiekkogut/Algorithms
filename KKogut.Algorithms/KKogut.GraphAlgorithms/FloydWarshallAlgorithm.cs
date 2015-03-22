@@ -1,4 +1,4 @@
-﻿namespace KKogut.FloydWarshallAlorithm
+﻿namespace KKogut.GraphAlgorithms
 {
     public class FloydWarshallAlgorithm
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace KKogut.DijkstrasAlgorithm
+namespace KKogut.GraphAlgorithms
 {
     public class DijkstrasAlgorithm
     {

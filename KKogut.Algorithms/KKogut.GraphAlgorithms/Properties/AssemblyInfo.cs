@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KKogut.FloydWarshallAlorithm")]
+[assembly: AssemblyTitle("KKogut.GraphAlgorithms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KKogut.FloydWarshallAlorithm")]
+[assembly: AssemblyProduct("KKogut.GraphAlgorithms")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5b79cb1f-1fe8-46f3-a7e1-2d0427362c9f")]
+[assembly: Guid("867f0430-d1ec-411f-a25d-06c299f779cc")]
 
 // Version information for an assembly consists of the following four values:
 //

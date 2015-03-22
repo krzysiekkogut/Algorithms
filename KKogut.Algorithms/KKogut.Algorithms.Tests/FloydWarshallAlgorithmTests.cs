@@ -1,4 +1,4 @@
-﻿using KKogut.FloydWarshallAlorithm;
+﻿using KKogut.GraphAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KKogut.Algorithms.Tests
