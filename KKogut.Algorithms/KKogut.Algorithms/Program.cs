@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using KKogut.ChangeProblem;
 using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.FloydWarshallAlorithm;
 using KKogut.PriorityQueue;
@@ -43,6 +44,9 @@ namespace KKogut.Algorithms
                         break;
                     case "8":
                         RunPriorityQueue();
+                        break;
+                    case "9":
+                        RunGreedyChangeMakingProblem();
                         break;
                     default:
                         return;
@@ -194,5 +198,18 @@ namespace KKogut.Algorithms
                 }
             }
         }
+
+        private static void RunGreedyChangeMakingProblem()
+        {
+            var gc = new GreedyChange();
+            Console.WriteLine("Enter available coins (delimitted with space):");
+            var coins = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            gc.RegisterCoins(coins);
+            Console.WriteLine("Enter amount to change:");
+            var change = gc.GetChangeFor(Convert.ToInt32(Console.ReadLine()));
+            foreach (var c in change)
+                Console.Write("{0} ", c);
+            Console.WriteLine();
+            }
     }
 }

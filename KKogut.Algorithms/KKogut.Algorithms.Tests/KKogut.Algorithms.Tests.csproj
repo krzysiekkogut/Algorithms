@@ -57,8 +57,13 @@
     <Compile Include="FibonacciSequenceTests.cs" />
     <Compile Include="DijkstrasAlgorithmTest.cs" />
     <Compile Include="PriorityQueueTests.cs" />
+    <Compile Include="GreedyChangeTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KKogut.ChangeProblem\KKogut.ChangeProblem.csproj">
+      <Project>{a5a38c86-af98-40f9-ae71-2250783b3368}</Project>
+      <Name>KKogut.ChangeProblem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KKogut.DijkstrasAlgorithm\KKogut.DijkstrasAlgorithm.csproj">
       <Project>{da0d793d-34b6-484f-9e69-4452076aa0b2}</Project>
       <Name>KKogut.DijkstrasAlgorithm</Name>
