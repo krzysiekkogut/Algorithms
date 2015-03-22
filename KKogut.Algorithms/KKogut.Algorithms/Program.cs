@@ -19,35 +19,38 @@ namespace KKogut.Algorithms
                 var x = Console.ReadLine();
                 switch (x)
                 {
-                    case "0":
+                    case "1":
                         RunRussianMultiplication();
                         break;
-                    case "1":
+                    case "2":
                         RunBubbleSort();
                         break;
-                    case "2":
+                    case "3":
                         RunInsertionSort();
                         break;
-                    case "3":
+                    case "4":
                         RunSelectionSort();
                         break;
-                    case "4":
+                    case "5":
                         RunMergeSort();
                         break;
-                    case "5":
+                    case "6":
                         RunFibonacciSequence();
                         break;
-                    case "6":
+                    case "7":
                         RunDijkstrasAlgorithm();
                         break;
-                    case "7":
+                    case "8":
                         RunFloydWarshallAlgorithm();
                         break;
-                    case "8":
+                    case "9":
                         RunPriorityQueue();
                         break;
-                    case "9":
+                    case "10":
                         RunGreedyChangeMakingProblem();
+                        break;
+                    case "11":
+                        RunKaratsubaMultiplication();
                         break;
                     default:
                         return;
@@ -212,5 +215,12 @@ namespace KKogut.Algorithms
                 Console.Write("{0} ", c);
             Console.WriteLine();
             }
+
+        private static void RunKaratsubaMultiplication()
+        {
+            Console.WriteLine("Enter two natural numbers (delimitted with space):");
+            var @in = Console.ReadLine().Split(' ');
+            Console.WriteLine(KaratsubaMultiplication.Multiplicate(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
+        }
     }
 }

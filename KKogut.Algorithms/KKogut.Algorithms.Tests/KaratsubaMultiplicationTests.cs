@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace KKogut.Algorithms.Tests
 {
     [TestClass]
-    public class RussianMultiplicationTests
+    public class KaratsubaMultiplicationTests
     {
         [TestMethod]
         public void Multiplicate_By_0_Returns_0()
@@ -12,7 +12,7 @@ namespace KKogut.Algorithms.Tests
             long a = 0;
             long b = 253;
 
-            var result = RussianMultiplication.Multiplicate(a, b);
+            var result = KaratsubaMultiplication.Multiplicate(a, b);
 
             Assert.AreEqual(0, result);
         }
@@ -23,7 +23,7 @@ namespace KKogut.Algorithms.Tests
             long a = 12341234;
             long b = 897123;
 
-            var result = RussianMultiplication.Multiplicate(a, b);
+            var result = KaratsubaMultiplication.Multiplicate(a, b);
 
             Assert.AreEqual(a * b, result);
         }
