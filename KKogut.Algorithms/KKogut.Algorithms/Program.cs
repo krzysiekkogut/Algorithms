@@ -51,6 +51,9 @@ namespace KKogut.Algorithms
                     case "13":
                         RunLCS();
                         break;
+                    case"14":
+                        RunClosestPairOfPointsProblem();
+                        break;
                     default:
                         return;
                 }

@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKogut.GraphAlgorithms", "K
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKogut.LongestCommonSubsequence", "KKogut.LongestCommonSubsequence\KKogut.LongestCommonSubsequence.csproj", "{2C22DBCD-E0BB-4469-80E9-E554D6F463F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKogut.ClosestPairOfPointsProblem", "KKogut.ClosestPairOfPointsProblem\KKogut.ClosestPairOfPointsProblem.csproj", "{BB5D96CE-8311-455D-ACE9-D40A072B1859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{2C22DBCD-E0BB-4469-80E9-E554D6F463F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C22DBCD-E0BB-4469-80E9-E554D6F463F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C22DBCD-E0BB-4469-80E9-E554D6F463F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5D96CE-8311-455D-ACE9-D40A072B1859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5D96CE-8311-455D-ACE9-D40A072B1859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5D96CE-8311-455D-ACE9-D40A072B1859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5D96CE-8311-455D-ACE9-D40A072B1859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

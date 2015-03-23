@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using KKogut.ChangeProblem;
+using KKogut.ClosestPairOfPointsProblem;
 using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.GraphAlgorithms;
 using KKogut.LongestCommonSubsequence;
@@ -208,6 +209,22 @@ namespace KKogut.Algorithms
             var s2 = Console.ReadLine();
             Console.WriteLine("Length of longest common subsequence is {0}.", LCS.FindLCS(s1, s2));
             Console.WriteLine();
+        }
+
+        private static void RunClosestPairOfPointsProblem()
+        {
+            Console.WriteLine("Enter coordinates of points in format \"x y\" (only int):");
+            Console.WriteLine("To finish type \"enough\"");
+            var cpp = new ClosestPairOfPoints();
+            while (true)
+            {
+                var @in = Console.ReadLine();
+                if (@in.Equals("enough")) break;
+                var split = @in.Split(' ');
+                cpp.AddPoint(Convert.ToInt32(split[0]), Convert.ToInt32(split[1]));
+            }
+            var result = cpp.FindClosestPoints();
+            Console.WriteLine("Closest points are: ({0}, {1}) and ({2}, {3})", result.First.X, result.First.Y, result.Second.X, result.Second.Y);
         }
     }
 }

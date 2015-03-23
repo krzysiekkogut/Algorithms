@@ -61,11 +61,16 @@
     <Compile Include="GreedyChangeTests.cs" />
     <Compile Include="FordFulkersonAlgorithmTests.cs" />
     <Compile Include="LCSTests.cs" />
+    <Compile Include="ClosestPairOfPointsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KKogut.ChangeProblem\KKogut.ChangeProblem.csproj">
       <Project>{a5a38c86-af98-40f9-ae71-2250783b3368}</Project>
       <Name>KKogut.ChangeProblem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KKogut.ClosestPairOfPointsProblem\KKogut.ClosestPairOfPointsProblem.csproj">
+      <Project>{bb5d96ce-8311-455d-ace9-d40a072b1859}</Project>
+      <Name>KKogut.ClosestPairOfPointsProblem</Name>
     </ProjectReference>
     <ProjectReference Include="..\KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj">
       <Project>{4618662f-0e78-41a1-b0ec-9c0abb683fe7}</Project>
