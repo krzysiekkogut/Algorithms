@@ -48,6 +48,9 @@ namespace KKogut.Algorithms
                     case "12":
                         RunFordFulkersonAlgorithm();
                         break;
+                    case "13":
+                        RunLCS();
+                        break;
                     default:
                         return;
                 }

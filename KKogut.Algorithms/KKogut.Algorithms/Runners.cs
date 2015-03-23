@@ -3,6 +3,7 @@ using System.Linq;
 using KKogut.ChangeProblem;
 using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.GraphAlgorithms;
+using KKogut.LongestCommonSubsequence;
 using KKogut.MultiplicationAlgorithms;
 using KKogut.PriorityQueue;
 using KKogut.SortAlgorithms;
@@ -196,6 +197,16 @@ namespace KKogut.Algorithms
             split = @in.Split(' ');
             var maxFlow = ff.FindMaximumFlow(Convert.ToInt32(split[0]), Convert.ToInt32(split[1]));
             Console.WriteLine("Max flow of this graph is {0}.", maxFlow);
+            Console.WriteLine();
+        }
+
+        private static void RunLCS()
+        {
+            Console.WriteLine("Enter first string:");
+            var s1 = Console.ReadLine();
+            Console.WriteLine("Enter second string:");
+            var s2 = Console.ReadLine();
+            Console.WriteLine("Length of longest common subsequence is {0}.", LCS.FindLCS(s1, s2));
             Console.WriteLine();
         }
     }

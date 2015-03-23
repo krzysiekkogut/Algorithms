@@ -61,6 +61,10 @@
       <Project>{675a6e18-88b6-4f83-81c6-043e4783cb0d}</Project>
       <Name>KKogut.GraphAlgorithms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KKogut.LongestCommonSubsequence\KKogut.LongestCommonSubsequence.csproj">
+      <Project>{2c22dbcd-e0bb-4469-80e9-e554d6f463f9}</Project>
+      <Name>KKogut.LongestCommonSubsequence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KKogut.MultiplicationAlgorithms\KKogut.MultiplicationAlgorithms.csproj">
       <Project>{530087c5-bb1b-4433-bd12-067355c7a51d}</Project>
       <Name>KKogut.MultiplicationAlgorithms</Name>
