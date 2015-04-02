@@ -54,6 +54,9 @@ namespace KKogut.Algorithms
                     case"14":
                         RunClosestPairOfPointsProblem();
                         break;
+                    case "15":
+                        RunKruskalAlgorithm();
+                        break;
                     default:
                         return;
                 }

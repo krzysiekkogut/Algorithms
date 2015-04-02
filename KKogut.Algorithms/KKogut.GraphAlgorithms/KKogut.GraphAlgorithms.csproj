@@ -42,6 +42,7 @@
     <Compile Include="DijkstrasAlgorithm.cs" />
     <Compile Include="FloydWarshallAlgorithm.cs" />
     <Compile Include="FordFulkersonAlgorithm.cs" />
+    <Compile Include="KruskalAlgorithm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -50,16 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FloydWarshallAlgorithmTests.cs" />
-    <Compile Include="KaratsubaMultiplicationTests.cs" />
-    <Compile Include="RussianMultiplicationTests.cs" />
+    <Compile Include="GraphAlgorithms\FloydWarshallAlgorithmTests.cs" />
+    <Compile Include="GraphAlgorithms\KruskalAlgorithmTests.cs" />
+    <Compile Include="MultiplicationAlgorithms\KaratsubaMultiplicationTests.cs" />
+    <Compile Include="MultiplicationAlgorithms\RussianMultiplicationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortTests.cs" />
     <Compile Include="FibonacciSequenceTests.cs" />
-    <Compile Include="DijkstrasAlgorithmTest.cs" />
+    <Compile Include="GraphAlgorithms\DijkstrasAlgorithmTest.cs" />
     <Compile Include="PriorityQueueTests.cs" />
     <Compile Include="GreedyChangeTests.cs" />
-    <Compile Include="FordFulkersonAlgorithmTests.cs" />
+    <Compile Include="GraphAlgorithms\FordFulkersonAlgorithmTests.cs" />
     <Compile Include="LCSTests.cs" />
     <Compile Include="ClosestPairOfPointsTests.cs" />
   </ItemGroup>

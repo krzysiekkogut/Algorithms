@@ -1,7 +1,7 @@
 ﻿using KKogut.MultiplicationAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KKogut.Algorithms.Tests
+namespace KKogut.Algorithms.Tests.MultiplicationAlgorithms
 {
     [TestClass]
     public class RussianMultiplicationTests

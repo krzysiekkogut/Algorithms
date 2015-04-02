@@ -2,7 +2,7 @@
 using KKogut.GraphAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KKogut.Algorithms.Tests
+namespace KKogut.Algorithms.Tests.GraphAlgorithms
 {
     [TestClass]
     public class FordFulkersonAlgorithmTests

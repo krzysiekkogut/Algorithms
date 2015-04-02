@@ -226,5 +226,22 @@ namespace KKogut.Algorithms
             var result = cpp.FindClosestPoints();
             Console.WriteLine("Closest points are: ({0}, {1}) and ({2}, {3})", result.First.X, result.First.Y, result.Second.X, result.Second.Y);
         }
+
+        private static void RunKruskalAlgorithm()
+        {
+            Console.WriteLine("Enter the number of vertices:");
+            var n = Convert.ToInt32(Console.ReadLine());
+            var kruskal = new KruskalAlgorithm(n);
+            Console.WriteLine("Enter edges and their weights (in format: u v w).");
+            Console.WriteLine("To finish type \"enough\"");
+            while (true)
+            {
+                var @in = Console.ReadLine();
+                if (@in.ToLower().Equals("enough")) break;
+                var split = @in.Split(' ');
+                kruskal.AddEdge(Convert.ToInt32(split[0]), Convert.ToInt32(split[1]), Convert.ToInt32(split[2]));
+            }
+            Console.WriteLine("Weight if MST for given graph is {0}.", kruskal.FindMST());
+        }
     }
 }

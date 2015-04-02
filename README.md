@@ -16,3 +16,4 @@ Implementation of chosen problems from Algorithms And Data Structures course on 
 12. Ford-Fulkerson algorithm
 13. Longest common subsequence
 14. Closest pair of points
+15. Kruskal MST algorithm.
