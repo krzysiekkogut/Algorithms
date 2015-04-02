@@ -1,16 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace KKogut.GraphAlgorithms
+namespace KKogut.Algorithms.Tests.GraphAlgorithms
 {
-    public class DijkstrasAlgorithm
+    public class PrimAlgorithm
     {
         private int n;
         private int[,] edges;
         private int[] distances;
+        private bool[] visited;
         private SortedList<int, int> q;
-
-        public DijkstrasAlgorithm(int numberOfVertices)
+        
+        public PrimAlgorithm(int numberOfVertices)
         {
             n = numberOfVertices;
             edges = new int[n, n];
@@ -20,10 +22,8 @@ namespace KKogut.GraphAlgorithms
             distances = new int[n];
             q = new SortedList<int, int>(n);
             for (int i = 0; i < n; i++)
-            {
                 distances[i] = int.MaxValue;
-                q.Add(i, distances[i]);
-            }
+            visited = new bool[n];
         }
 
         public void AddEdge(int u, int v, int w)
@@ -31,9 +31,12 @@ namespace KKogut.GraphAlgorithms
             edges[u, v] = edges[v, u] = w;
         }
 
-        public int[] FindShortestDistancesFromVertex(int v)
+        public int FindMST()
         {
-            distances[v] = q[v] = 0;
+            var v = FirstVertex();
+         
+            distances[v] = 0;
+            q.Add(v, distances[v]);
 
             while (q.Any())
             {
@@ -41,18 +44,26 @@ namespace KKogut.GraphAlgorithms
                 q.RemoveAt(0);
                 for (int i = 0; i < n; i++)
                 {
-                    if (edges[u, i] == -1) continue;
-
-                    if (distances[u] + edges[u, i] < distances[i])
+                    if (edges[u, i] == -1 || visited[i]) continue;
+                    if (edges[u,i] < distances[i])
                     {
-                        distances[i] = distances[u] + edges[u, i];
+                        distances[i] = edges[u, i];
                         if (q.ContainsKey(i)) q[i] = distances[i];
                         else q.Add(i, distances[i]);
                     }
                 }
             }
 
-            return distances;
+            return distances.Sum();
+        }
+
+        private int FirstVertex()
+        {
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    if (edges[i, j] != -1)
+                        return i;
+            throw new Exception("Empty graph.");
         }
     }
 }

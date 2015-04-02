@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using KKogut.Algorithms.Tests.GraphAlgorithms;
 using KKogut.ChangeProblem;
 using KKogut.ClosestPairOfPointsProblem;
 using KKogut.FibonacciSequenceUsingMatrix;
@@ -11,16 +12,16 @@ using KKogut.SortAlgorithms;
 
 namespace KKogut.Algorithms
 {
-    partial class Program
+    static class Runners
     {
-        private static void RunRussianMultiplication()
+        public static void RunRussianMultiplication()
         {
             Console.WriteLine("Enter two natural numbers (delimitted with space):");
             var @in = Console.ReadLine().Split(' ');
             Console.WriteLine(RussianMultiplication.Multiplicate(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
         }
-
-        private static void RunBubbleSort()
+        
+        public static void RunBubbleSort()
         {
             Console.WriteLine("Enter natural numbers to sort (delimitted with space):");
             var @in = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x));
@@ -31,8 +32,8 @@ namespace KKogut.Algorithms
             }
             Console.WriteLine();
         }
-
-        private static void RunInsertionSort()
+        
+        public static void RunInsertionSort()
         {
             Console.WriteLine("Enter natural numbers to sort (delimitted with space):");
             var @in = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x));
@@ -43,8 +44,8 @@ namespace KKogut.Algorithms
             }
             Console.WriteLine();
         }
-
-        private static void RunSelectionSort()
+        
+        public static void RunSelectionSort()
         {
             Console.WriteLine("Enter natural numbers to sort (delimitted with space):");
             var @in = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x));
@@ -55,8 +56,8 @@ namespace KKogut.Algorithms
             }
             Console.WriteLine();
         }
-
-        private static void RunMergeSort()
+        
+        public static void RunMergeSort()
         {
             Console.WriteLine("Enter natural numbers to sort (delimitted with space):");
             var @in = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x));
@@ -67,15 +68,15 @@ namespace KKogut.Algorithms
             }
             Console.WriteLine();
         }
-
-        private static void RunFibonacciSequence()
+        
+        public static void RunFibonacciSequence()
         {
             Console.WriteLine("Enter natural number:");
             var @in = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(FibonacciSequence.GetFibonacciNumber(@in));
         }
-
-        private static void RunDijkstrasAlgorithm()
+        
+        public static void RunDijkstrasAlgorithm()
         {
             Console.WriteLine("Enter the number of vertices:");
             var n = Convert.ToInt32(Console.ReadLine());
@@ -98,8 +99,8 @@ namespace KKogut.Algorithms
                 Console.WriteLine("{0}\t{1}", i, distances[i]);
             Console.WriteLine();
         }
-
-        private static void RunFloydWarshallAlgorithm()
+        
+        public static void RunFloydWarshallAlgorithm()
         {
             Console.WriteLine("Enter the number of vertices:");
             var n = Convert.ToInt32(Console.ReadLine());
@@ -120,8 +121,8 @@ namespace KKogut.Algorithms
                     Console.WriteLine("{0} -> {1}: {2}", i, j, distances[i, j]);
             Console.WriteLine();
         }
-
-        private static void RunPriorityQueue()
+        
+        public static void RunPriorityQueue()
         {
             Console.WriteLine("Enter size of queue:");
             var size = Convert.ToInt32(Console.ReadLine());
@@ -156,8 +157,8 @@ namespace KKogut.Algorithms
                 }
             }
         }
-
-        private static void RunGreedyChangeMakingProblem()
+        
+        public static void RunGreedyChangeMakingProblem()
         {
             var gc = new GreedyChange();
             Console.WriteLine("Enter available coins (delimitted with space):");
@@ -169,15 +170,15 @@ namespace KKogut.Algorithms
                 Console.Write("{0} ", c);
             Console.WriteLine();
         }
-
-        private static void RunKaratsubaMultiplication()
+        
+        public static void RunKaratsubaMultiplication()
         {
             Console.WriteLine("Enter two natural numbers (delimitted with space):");
             var @in = Console.ReadLine().Split(' ');
             Console.WriteLine(KaratsubaMultiplication.Multiplicate(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
         }
-
-        private static void RunFordFulkersonAlgorithm()
+        
+        public static void RunFordFulkersonAlgorithm()
         {
             Console.WriteLine("Enter the number of vertices:");
             var n = Convert.ToInt32(Console.ReadLine());
@@ -200,8 +201,8 @@ namespace KKogut.Algorithms
             Console.WriteLine("Max flow of this graph is {0}.", maxFlow);
             Console.WriteLine();
         }
-
-        private static void RunLCS()
+    
+        public static void RunLCS()
         {
             Console.WriteLine("Enter first string:");
             var s1 = Console.ReadLine();
@@ -210,8 +211,8 @@ namespace KKogut.Algorithms
             Console.WriteLine("Length of longest common subsequence is {0}.", LCS.FindLCS(s1, s2));
             Console.WriteLine();
         }
-
-        private static void RunClosestPairOfPointsProblem()
+        
+        public static void RunClosestPairOfPointsProblem()
         {
             Console.WriteLine("Enter coordinates of points in format \"x y\" (only int):");
             Console.WriteLine("To finish type \"enough\"");
@@ -226,8 +227,8 @@ namespace KKogut.Algorithms
             var result = cpp.FindClosestPoints();
             Console.WriteLine("Closest points are: ({0}, {1}) and ({2}, {3})", result.First.X, result.First.Y, result.Second.X, result.Second.Y);
         }
-
-        private static void RunKruskalAlgorithm()
+        
+        public static void RunKruskalAlgorithm()
         {
             Console.WriteLine("Enter the number of vertices:");
             var n = Convert.ToInt32(Console.ReadLine());
@@ -243,5 +244,23 @@ namespace KKogut.Algorithms
             }
             Console.WriteLine("Weight if MST for given graph is {0}.", kruskal.FindMST());
         }
+
+        public static void RunPrimAlgorithm()
+        {
+            Console.WriteLine("Enter the number of vertices:");
+            var n = Convert.ToInt32(Console.ReadLine());
+            var prim = new PrimAlgorithm(n);
+            Console.WriteLine("Enter edges and their weights (in format: u v w).");
+            Console.WriteLine("To finish type \"enough\"");
+            while (true)
+            {
+                var @in = Console.ReadLine();
+                if (@in.ToLower().Equals("enough")) break;
+                var split = @in.Split(' ');
+                prim.AddEdge(Convert.ToInt32(split[0]), Convert.ToInt32(split[1]), Convert.ToInt32(split[2]));
+            }
+            Console.WriteLine("Weight if MST for given graph is {0}.", prim.FindMST());
+        }
     }
+
 }

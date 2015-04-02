@@ -23,10 +23,7 @@ namespace KKogut.GraphAlgorithms
         public int FindMST()
         {
             var result = 0;
-
-            var visited = new Dictionary<int,bool>();
-            for (int i = 0; i < n; i++)
-                visited.Add(i, false);
+            var visited = new bool[n];
 
             var orderedEdges = edges.OrderBy(e => e.Value);
             foreach (var edge in orderedEdges)

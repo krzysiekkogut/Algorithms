@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="GraphAlgorithms\FloydWarshallAlgorithmTests.cs" />
     <Compile Include="GraphAlgorithms\KruskalAlgorithmTests.cs" />
+    <Compile Include="GraphAlgorithms\PrimAlgorithmTests.cs" />
     <Compile Include="MultiplicationAlgorithms\KaratsubaMultiplicationTests.cs" />
     <Compile Include="MultiplicationAlgorithms\RussianMultiplicationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

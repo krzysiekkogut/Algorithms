@@ -17,3 +17,4 @@ Implementation of chosen problems from Algorithms And Data Structures course on 
 13. Longest common subsequence
 14. Closest pair of points
 15. Kruskal MST algorithm.
+16. Prim MST algorithm.

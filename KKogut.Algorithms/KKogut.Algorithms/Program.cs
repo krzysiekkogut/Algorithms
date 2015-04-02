@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Xml;
 
 namespace KKogut.Algorithms
 {
@@ -6,60 +8,16 @@ namespace KKogut.Algorithms
     {
         static void Main(string[] args)
         {
+            var xml = new XmlDocument();
+            xml.Load("RunMethods.xml");
+            
             while (true)
             {
                 Console.WriteLine("Please type in a number of algorithm:");
-                var x = Console.ReadLine();
-                switch (x)
-                {
-                    case "1":
-                        RunRussianMultiplication();
-                        break;
-                    case "2":
-                        RunBubbleSort();
-                        break;
-                    case "3":
-                        RunInsertionSort();
-                        break;
-                    case "4":
-                        RunSelectionSort();
-                        break;
-                    case "5":
-                        RunMergeSort();
-                        break;
-                    case "6":
-                        RunFibonacciSequence();
-                        break;
-                    case "7":
-                        RunDijkstrasAlgorithm();
-                        break;
-                    case "8":
-                        RunFloydWarshallAlgorithm();
-                        break;
-                    case "9":
-                        RunPriorityQueue();
-                        break;
-                    case "10":
-                        RunGreedyChangeMakingProblem();
-                        break;
-                    case "11":
-                        RunKaratsubaMultiplication();
-                        break;
-                    case "12":
-                        RunFordFulkersonAlgorithm();
-                        break;
-                    case "13":
-                        RunLCS();
-                        break;
-                    case"14":
-                        RunClosestPairOfPointsProblem();
-                        break;
-                    case "15":
-                        RunKruskalAlgorithm();
-                        break;
-                    default:
-                        return;
-                }
+                int x;
+                if (Int32.TryParse(Console.ReadLine(), out x) == false) return;
+                var method = xml.ChildNodes[1].ChildNodes.Item(x - 1).Attributes["name"].Value;
+                typeof(Runners).GetMethod(method).Invoke(null, null);
                 Console.WriteLine();
             }
         }
