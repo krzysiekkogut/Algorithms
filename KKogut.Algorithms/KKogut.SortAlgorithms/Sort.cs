@@ -6,67 +6,63 @@ namespace KKogut.SortAlgorithms
 {
     public static class Sort
     {
-        public static IEnumerable<T> BubbleSort<T>(this IEnumerable<T> array) where T : IComparable
+        public static T[] BubbleSort<T>(this T[] array) where T : IComparable
         {
-            var arr = array.ToArray<T>();
-
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < arr.Length; j++)
+                for (int j = 0; j < array.Length - 1; j++)
                 {
-                    if(arr[j].CompareTo(arr[j]) < 0)
+                    if (array[j].CompareTo(array[j + 1]) > 0)
                     {
-                        var tmp = arr[j];
-                        arr[j] = arr[i];
-                        arr[i] = tmp;
+                        var tmp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = tmp;
                     }
                 }
             }
 
-            return arr;
+            return array;
         }
 
-        public static IEnumerable<T> InsertionSort<T>(this IEnumerable<T> array) where T : IComparable
+        public static T[] InsertionSort<T>(this T[] array) where T : IComparable
         {
-            var arr = array.ToArray<T>();
-            for (int i = 1; i < arr.Length; i++)
+            for (int i = 1; i < array.Length; i++)
             {
                 int j = i - 1;
-                var curr = arr[i];
-                while (j >= 0 && curr.CompareTo(arr[j]) < 0)
+                var curr = array[i];
+                while (j >= 0 && curr.CompareTo(array[j]) < 0)
                 {
-                    arr[j + 1] = arr[j];
+                    array[j + 1] = array[j];
                     j--;
                 }
-                arr[j + 1] = curr;
+                array[j + 1] = curr;
             }
 
-            return arr;
+            return array;
         }
 
-        public static IEnumerable<T> SelectionSort<T>(this IEnumerable<T> array) where T : IComparable
+        public static T[] SelectionSort<T>(this T[] array) where T : IComparable
         {
-            var arr = array.ToArray<T>();
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < array.Length - 1; i++)
             {
                 var minIndex = i;
-                var minValue = arr[i];
-                for (int j = i + 1; j < arr.Length; j++)
+                var minValue = array[i];
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (arr[j].CompareTo(minValue) < 0)
+                    if (array[j].CompareTo(minValue) < 0)
                     {
                         minIndex = j;
-                        minValue = arr[j];
+                        minValue = array[j];
                     }
                 }
-                arr[minIndex] = arr[i];
-                arr[i] = minValue;
+                array[minIndex] = array[i];
+                array[i] = minValue;
             }
 
-            return arr;
+            return array;
         }
 
-        public static IEnumerable<T> MergeSort<T>(this IEnumerable<T> array) where T : IComparable
+        public static T[] MergeSort<T>(this T[] array) where T : IComparable
         {
             if (array.Count() <= 1)
             {
@@ -74,45 +70,99 @@ namespace KKogut.SortAlgorithms
             }
 
             var mid = array.Count() / 2;
-            var leftArr = MergeSort<T>(array.Take(mid));
-            var rightArr = MergeSort<T>(array.Skip(mid));
+            var leftarray = MergeSort<T>(array.Take(mid).ToArray());
+            var rightarray = MergeSort<T>(array.Skip(mid).ToArray());
 
-            return Merge<T>(leftArr, rightArr);
+            return Merge<T>(leftarray, rightarray);
         }
 
-        private static IEnumerable<T> Merge<T>(IEnumerable<T> left, IEnumerable<T> right) where T : IComparable
+        private static T[] Merge<T>(T[] left, T[] right) where T : IComparable
         {
-            var result = new List<T>();
-            var leftArr = left.ToArray();
-            var rightArr = right.ToArray();
+            var result = new T[left.Length + right.Length];
 
             var l = 0;
             var r = 0;
-            while (l < leftArr.Length && r < rightArr.Length)
+            var i = 0;
+            while (l < left.Length && r < right.Length)
             {
-                if (leftArr[l].CompareTo(rightArr[r]) < 1)
+                if (left[l].CompareTo(right[r]) < 1)
                 {
-                    result.Add(leftArr[l]);
+                    result[i] = left[l];
+                    i++;
                     l++;
                 }
                 else
                 {
-                    result.Add(rightArr[r]);
+                    result[i] = right[r];
+                    i++;
                     r++;
                 }
             }
-            while (l < leftArr.Length)
+            while (l < left.Length)
             {
-                result.Add(leftArr[l]);
+                result[i] = left[l];
+                i++;
                 l++;
             }
-            while (r < rightArr.Length)
+            while (r < right.Length)
             {
-                result.Add(rightArr[r]);
+                result[i] = right[r];
+                i++;
                 r++;
             }
 
             return result;
+        }
+
+        public static T[] QuickSort<T>(this T[] array) where T : IComparable
+        {
+            if (array.Count() <= 1)
+            {
+                return array;
+            }
+
+            QuickSort<T>(array, 0, array.Length - 1);
+            return array;
+        }
+
+        private static void QuickSort<T>(T[] array, int left, int right) where T : IComparable
+        {
+            if (left < right)
+            {
+                var pivot = Partition<T>(array, left, right);
+                QuickSort(array, left, pivot - 1);
+                QuickSort(array, pivot + 1, right);
+            }
+        }
+
+        private static int Partition<T>(T[] array, int left, int right) where T : IComparable
+        {
+            var pivotIndex = ChoosePivot(array, left, right);
+            var pivotValue = array[pivotIndex];
+            var tmp = array[pivotIndex];
+            array[pivotIndex] = array[right];
+            array[right] = tmp;
+            var s = left;
+            for (int i = left; i < right; i++)
+            {
+                if (array[i].CompareTo(pivotValue) < 0)
+                {
+                    tmp = array[i];
+                    array[i] = array[s];
+                    array[s] = tmp;
+                    s++;
+                }
+            }
+            tmp = array[s];
+            array[s] = array[right];
+            array[right] = tmp;
+            return s;
+        }
+
+        private static int ChoosePivot<T>(T[] array, int left, int right) where T : IComparable
+        {
+            // could use sth more else, random or median for example
+            return left;
         }
     }
 }

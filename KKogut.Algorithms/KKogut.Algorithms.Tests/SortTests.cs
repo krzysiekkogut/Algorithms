@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using KKogut.SortAlgorithms;
+using System.Collections;
 
 namespace KKogut.Algorithms.Tests
 {
@@ -16,6 +17,7 @@ namespace KKogut.Algorithms.Tests
             var result = @in.BubbleSort<int>();
 
             CollectionAssert.AreEquivalent(expected, result.ToList());
+            CollectionInTheSameSequence(expected.ToList(), result.ToList());
         }
 
         [TestMethod]
@@ -26,7 +28,8 @@ namespace KKogut.Algorithms.Tests
 
             var result = @in.InsertionSort<int>();
 
-            CollectionAssert.AreEquivalent(expected, result.ToList()); 
+            CollectionAssert.AreEquivalent(expected, result.ToList());
+            CollectionInTheSameSequence(expected.ToList(), result.ToList());
         }
 
         [TestMethod]
@@ -38,6 +41,7 @@ namespace KKogut.Algorithms.Tests
             var result = @in.SelectionSort<int>();
 
             CollectionAssert.AreEquivalent(expected, result.ToList());
+            CollectionInTheSameSequence(expected.ToList(), result.ToList());
         }
 
         [TestMethod]
@@ -49,6 +53,25 @@ namespace KKogut.Algorithms.Tests
             var result = @in.MergeSort<int>();
 
             CollectionAssert.AreEquivalent(expected, result.ToList());
+            CollectionInTheSameSequence(expected.ToList(), result.ToList());
+        }
+
+        [TestMethod]
+        public void QuickSort_Test()
+        {
+            var @in = new[] { 1, 5, 12, 3, 2, 7, 6, 9, 0 };
+            var expected = new[] { 0, 1, 2, 3, 5, 6, 7, 9, 12 };
+
+            var result = @in.QuickSort<int>();
+
+            CollectionAssert.AreEquivalent(expected, result.ToList());
+            CollectionInTheSameSequence(expected.ToList(), result.ToList());
+        }
+
+        private void CollectionInTheSameSequence(IList expected, IList actual)
+        {
+            for (int i = 0; i < expected.Count; i++)
+                Assert.AreEqual(expected[i], actual[i]);
         }
     }
 }

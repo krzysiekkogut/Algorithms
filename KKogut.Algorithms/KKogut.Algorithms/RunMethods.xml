@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<methods>
+  <method name="RunRussianMultiplication"/>
+  <method name="RunBubbleSort"/>
+  <method name="RunInsertionSort"/>
+  <method name="RunSelectionSort"/>
+  <method name="RunMergeSort"/>
+  <method name="RunQuickSort"/>
+  <method name="RunFibonacciSequence"/>
+  <method name="RunDijkstrasAlgorithm"/>
+  <method name="RunFloydWarshallAlgorithm"/>
+  <method name="RunPriorityQueue"/>
+  <method name="RunGreedyChangeMakingProblem"/>
+  <method name="RunKaratsubaMultiplication"/>
+  <method name="RunFordFulkersonAlgorithm"/>
+  <method name="RunLCS"/>
+  <method name="RunClosestPairOfPointsProblem"/>
+  <method name="RunKruskalAlgorithm"/>
+  <method name="RunPrimAlgorithm"/>
+</methods>
