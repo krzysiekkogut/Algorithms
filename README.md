@@ -1,7 +1,7 @@
 
 #algorithms
 
-Implementation of chosen problems from Algorithms And Data Structures course on Wroclaw University.
+Implementation of chosen problems from Algorithms and Data Structures course on Wroclaw University.
 
 1. Russian multiplication
 2. Bubble sort
