@@ -161,7 +161,7 @@ namespace KKogut.SortAlgorithms
 
         private static int ChoosePivot<T>(T[] array, int left, int right) where T : IComparable
         {
-            // could use sth more else, random or median for example
+            // could use sth more else, random or median for example 
             return left;
         }
     }
