@@ -19,7 +19,7 @@ namespace KKogut.PriorityQueue
             array = new T[size + 1];
         }
 
-        internal void Add(T item)
+        public void Add(T item)
         {
             if (count + 1 > array.Length - 1)
                 throw new IndexOutOfRangeException();
@@ -52,7 +52,7 @@ namespace KKogut.PriorityQueue
             array[j] = tmp;
         }
 
-        internal T Remove()
+        public T Remove()
         {
             if (count < 1)
                 throw new InvalidOperationException();
