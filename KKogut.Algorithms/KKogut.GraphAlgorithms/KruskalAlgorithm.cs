@@ -28,9 +28,11 @@ namespace KKogut.GraphAlgorithms
             var orderedEdges = edges.OrderBy(e => e.Value);
             foreach (var edge in orderedEdges)
             {
-                if (visited[edge.Key.Item1] && visited[edge.Key.Item2]) continue;
-                result += edge.Value;
-                visited[edge.Key.Item1] = visited[edge.Key.Item2] = true;
+                if (!visited[edge.Key.Item1] || !visited[edge.Key.Item2])
+                {
+                    result += edge.Value;
+                    visited[edge.Key.Item1] = visited[edge.Key.Item2] = true;
+                }
             }
             
             return result;

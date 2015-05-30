@@ -8,7 +8,7 @@ namespace KKogut.GraphAlgorithms
         private int n;
         private int[,] edges;
         private int[] distances;
-        private SortedList<int, int> q;
+        private Dictionary<int, int> q;
 
         public DijkstrasAlgorithm(int numberOfVertices)
         {
@@ -18,7 +18,7 @@ namespace KKogut.GraphAlgorithms
                 for (int j = 0; j < n; j++)
                     edges[i, j] = -1;
             distances = new int[n];
-            q = new SortedList<int, int>(n);
+            q = new Dictionary<int, int>(n);
             for (int i = 0; i < n; i++)
             {
                 distances[i] = int.MaxValue;
@@ -38,12 +38,10 @@ namespace KKogut.GraphAlgorithms
             while (q.Any())
             {
                 var u = q.First().Key;
-                q.RemoveAt(0);
+                q.Remove(u);
                 for (int i = 0; i < n; i++)
                 {
-                    if (edges[u, i] == -1) continue;
-
-                    if (distances[u] + edges[u, i] < distances[i])
+                    if (edges[u, i] != -1 && distances[u] + edges[u, i] < distances[i])
                     {
                         distances[i] = distances[u] + edges[u, i];
                         if (q.ContainsKey(i)) q[i] = distances[i];

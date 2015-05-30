@@ -1,5 +1,5 @@
 ﻿using System;
-using KKogut.PriorityQueue;
+using System.Collections.Generic;
 
 namespace KKogut.GraphAlgorithms
 {
@@ -56,7 +56,7 @@ namespace KKogut.GraphAlgorithms
         private bool BFS(int[,] graph, int source, int destination, int[] parent)
         {
             bool[] visited = new bool[n];
-            var queue = new PriorityQueue<int>(n);
+            var queue = new Queue<int>(n);
             queue.Enqueue(source);
             visited[source] = true;
             parent[source] = -1;

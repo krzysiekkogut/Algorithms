@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using KKogut.GraphAlgorithms;
 
 namespace KKogut.Algorithms.Tests.GraphAlgorithms
 {
@@ -9,43 +10,45 @@ namespace KKogut.Algorithms.Tests.GraphAlgorithms
         private int n;
         private int[,] edges;
         private int[] distances;
-        private bool[] visited;
-        private SortedList<int, int> q;
-        
+        private Dictionary<int, int> q;
+
         public PrimAlgorithm(int numberOfVertices)
         {
+            FirstVertex = -1;
             n = numberOfVertices;
             edges = new int[n, n];
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
                     edges[i, j] = -1;
             distances = new int[n];
-            q = new SortedList<int, int>(n);
             for (int i = 0; i < n; i++)
                 distances[i] = int.MaxValue;
-            visited = new bool[n];
+            q = new Dictionary<int, int>(n);
         }
 
         public void AddEdge(int u, int v, int w)
         {
+            if (FirstVertex == -1)
+                FirstVertex = u;
+
             edges[u, v] = edges[v, u] = w;
         }
 
         public int FindMST()
         {
-            var v = FirstVertex();
-         
-            distances[v] = 0;
-            q.Add(v, distances[v]);
+            if (FirstVertex == -1)
+                throw new Exception("Empty graph.");
+
+            distances[FirstVertex] = 0;
+            q.Add(FirstVertex, distances[FirstVertex]);
 
             while (q.Any())
             {
                 var u = q.First().Key;
-                q.RemoveAt(0);
+                q.Remove(u);
                 for (int i = 0; i < n; i++)
                 {
-                    if (edges[u, i] == -1 || visited[i]) continue;
-                    if (edges[u,i] < distances[i])
+                    if (edges[u, i] != -1 && edges[u, i] < distances[i])
                     {
                         distances[i] = edges[u, i];
                         if (q.ContainsKey(i)) q[i] = distances[i];
@@ -57,13 +60,6 @@ namespace KKogut.Algorithms.Tests.GraphAlgorithms
             return distances.Sum();
         }
 
-        private int FirstVertex()
-        {
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                    if (edges[i, j] != -1)
-                        return i;
-            throw new Exception("Empty graph.");
-        }
+        private int FirstVertex { get; set; }
     }
 }
