@@ -57,6 +57,10 @@
       <Project>{bb5d96ce-8311-455d-ace9-d40a072b1859}</Project>
       <Name>KKogut.ClosestPairOfPointsProblem</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KKogut.Euklides\KKogut.Euklides.csproj">
+      <Project>{7731b0ed-a0be-475b-92b2-09251aa5fc2c}</Project>
+      <Name>KKogut.Euklides</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KKogut.FibonacciSequenceUsingMatrix\KKogut.FibonacciSequenceUsingMatrix.csproj">
       <Project>{4618662f-0e78-41a1-b0ec-9c0abb683fe7}</Project>
       <Name>KKogut.FibonacciSequenceUsingMatrix</Name>

@@ -9,14 +9,15 @@ Implementation of chosen problems from Algorithms and Data Structures course on 
 4. Selection sort
 5. Merge sort
 6. Quick sort
-7. Fibonacci Sequence (quick matrix multiplication)
-8. Dijkstra's algorithm to find shortest paths from source vertex
-9. Floyd-Warshall algorithm to find shortest paths between each pair of vertices
-10. Priority queue using queue
-11. Greedy change-making problem
-12. Karatsuba multiplication
-13. Ford-Fulkerson algorithm
-14. Longest common subsequence
-15. Closest pair of points
-16. Kruskal MST algorithm.
-17. Prim MST algorithm.
+7. Euklides algorithm (GCD)
+8. Fibonacci Sequence (quick matrix multiplication)
+9. Dijkstra's algorithm to find shortest paths from source vertex
+10. Floyd-Warshall algorithm to find shortest paths between each pair of vertices
+11. Priority queue using queue
+12. Greedy change-making problem
+13. Karatsuba multiplication
+14. Ford-Fulkerson algorithm
+15. Longest common subsequence
+16. Closest pair of points
+17. Kruskal MST algorithm.
+18. Prim MST algorithm.

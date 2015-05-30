@@ -88,22 +88,23 @@ namespace KKogut.SortAlgorithms
                 if (left[l].CompareTo(right[r]) < 1)
                 {
                     result[i] = left[l];
-                    i++;
                     l++;
                 }
                 else
                 {
                     result[i] = right[r];
-                    i++;
                     r++;
                 }
+                i++;
             }
+
             while (l < left.Length)
             {
                 result[i] = left[l];
                 i++;
                 l++;
             }
+            
             while (r < right.Length)
             {
                 result[i] = right[r];
@@ -139,6 +140,7 @@ namespace KKogut.SortAlgorithms
         {
             var pivotIndex = ChoosePivot(array, left, right);
             var pivotValue = array[pivotIndex];
+            // move pivot to the end
             var tmp = array[pivotIndex];
             array[pivotIndex] = array[right];
             array[right] = tmp;
@@ -153,6 +155,7 @@ namespace KKogut.SortAlgorithms
                     s++;
                 }
             }
+            // insert pivot into its proper place
             tmp = array[s];
             array[s] = array[right];
             array[right] = tmp;
@@ -161,7 +164,7 @@ namespace KKogut.SortAlgorithms
 
         private static int ChoosePivot<T>(T[] array, int left, int right) where T : IComparable
         {
-            // could use sth more else, random or median for example 
+            // could use sth else, e.g. random or median
             return left;
         }
     }

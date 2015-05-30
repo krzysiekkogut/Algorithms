@@ -3,6 +3,7 @@ using System.Linq;
 using KKogut.Algorithms.Tests.GraphAlgorithms;
 using KKogut.ChangeProblem;
 using KKogut.ClosestPairOfPointsProblem;
+using KKogut.Euklides;
 using KKogut.FibonacciSequenceUsingMatrix;
 using KKogut.GraphAlgorithms;
 using KKogut.LongestCommonSubsequence;
@@ -79,6 +80,13 @@ namespace KKogut.Algorithms
                 Console.Write("{0} ", number);
             }
             Console.WriteLine();
+        }
+
+        public static void RunEuklidesGCD()
+        {
+            Console.WriteLine("Enter two integers (delimitted with space):");
+            var @in = Console.ReadLine().Split(' ');
+            Console.WriteLine(EuklidesAlgorithm.GCD(Convert.ToInt64(@in[0]), Convert.ToInt64(@in[1])));
         }
 
         public static void RunFibonacciSequence()

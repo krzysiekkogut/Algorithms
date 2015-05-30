@@ -6,6 +6,7 @@
   <method name="RunSelectionSort"/>
   <method name="RunMergeSort"/>
   <method name="RunQuickSort"/>
+  <method name="RunEuklidesGCD"/>
   <method name="RunFibonacciSequence"/>
   <method name="RunDijkstrasAlgorithm"/>
   <method name="RunFloydWarshallAlgorithm"/>
