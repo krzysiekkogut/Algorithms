@@ -31,18 +31,17 @@ namespace KKogut.PriorityQueue
         private void ReorderBottomUp()
         {
             int i = count;
-            bool @break;
             while (i > 1)
             {
-                @break = true;
                 if (array[i].CompareTo(array[i / 2]) < 0)
                 {
                     Swap(i, i / 2);
-                    @break = false;
+                    i /= 2;
                 }
-                if (@break)
-                    break;
-                i /= 2;
+                else
+                {
+                    return;
+                }
             }
         }
 
@@ -68,17 +67,16 @@ namespace KKogut.PriorityQueue
         private void ReorderTopDown()
         {
             int i = 1;
-            bool @break;
             while (i <= count / 2)
             {
-                @break = true;
                 if (array[i].CompareTo(array[2 * i]) > 0 || array[i].CompareTo(array[2 * i + 1]) > 0)
                 {
                     i = Swap(i, 2 * i, 2 * i + 1);
-                    @break = false;
                 }
-                if (@break)
-                    break;
+                else
+                {
+                    return;
+                }
             }
         }
 
